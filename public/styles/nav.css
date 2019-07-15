@@ -1,0 +1,16 @@
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ nav {
+  position: fixed;
+  font-family: 'Bungee', sans-serif; /* Logo */
+  color: #FFFFFF;
+  padding: 1.5em;
+  height: 120px;
+  background-color: #4056A1;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+ }
