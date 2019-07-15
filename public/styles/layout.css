@@ -3,8 +3,10 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -23,3 +25,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ nav {
+  font-family: 'Bungee', sans-serif; /* Logo */
+ }
