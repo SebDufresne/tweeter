@@ -14,12 +14,12 @@
     <script src="https://kit.fontawesome.com/08ed33cadd.js"></script>
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-list.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-new.css" type="text/css" />
 
   </head>
 
@@ -27,7 +27,10 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <ul>
+        <li id="logo">tweeter</li>
+        <li id="writeTweet"><strong>Write</strong> a new tweet</li>
+      </ul>
     </nav>
 
     <!-- Header Element -->
@@ -58,7 +61,7 @@
         <header>
           <img src="https://i.imgur.com/73hZDYK.png" alt="Newton">
           <h3 class="name">Newton</h3>
-          <h3 class="avatar">@SirIsaac</h3>
+          <p class="avatar">@SirIsaac</p>
         </header>
         <p>If I have seen further it is by standing on the shoulders of giants</p>
         <footer>

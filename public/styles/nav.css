@@ -4,13 +4,31 @@
 
  nav {
   position: fixed;
-  font-family: 'Bungee', sans-serif; /* Logo */
-  padding: 1.5em;
-  height: 120px;
-  background-color: #4056A1;
-  color: #FFFFFF;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+
+  height: 120px; /* Project Requirements */
+  padding: 1.5em;
+
+  color: #FFFFFF;
+  background-color: #4056A1;
+ }
+
+ nav ul {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  justify-content: space-between;
+  
+  list-style-type: none;
+ }
+
+ #logo {
+  font-family: 'Bungee', sans-serif; /* Logo */
+ }
+
+ #writeTweet {
+  font-size: 1.25rem;
  }
