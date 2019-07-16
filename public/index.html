@@ -13,6 +13,9 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -26,7 +29,7 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-        <span>tweeter</span>
+      <span>tweeter</span>
     </nav>
 
     <!-- Header Element -->
@@ -44,7 +47,21 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action='/tweets' method='POST'>
+          <textarea name="text" placeholder="What are you humming about?" rows="1"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+          
+      <p>1 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia vel nihil, delectus consectetur excepturi quidem, enim obcaecati deserunt pariatur soluta ullam quae iste et aspernatur, impedit sapiente? Maiores, eveniet pariatur.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia vel nihil, delectus consectetur excepturi quidem, enim obcaecati deserunt pariatur soluta ullam quae iste et aspernatur, impedit sapiente? Maiores, eveniet pariatur.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia vel nihil, delectus consectetur excepturi quidem, enim obcaecati deserunt pariatur soluta ullam quae iste et aspernatur, impedit sapiente? Maiores, eveniet pariatur.</p>
     </main>
+
+
 
   </body>
 </html>

@@ -1,0 +1,45 @@
+.new-tweet {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "form";
+  grid-template-columns: auto;  
+  grid-template-rows: auto auto;
+}
+
+.new-tweet h2 {
+  grid-area: header;
+  justify-self: center;
+}
+
+.new-tweet form {
+  grid-area: form;
+  display: grid;
+  grid-template-areas:
+    "textArr textArr textArr"
+    "inputArr . countArr";
+  grid-template-columns: auto auto auto;  
+  grid-template-rows: auto auto;
+}
+.new-tweet textarea {
+  grid-area: textArr;
+  resize: none;  /* Disable multi-row */
+  color: #545149;
+  font-weight: bold;
+  background-color: #f4f1ec;
+  border: 0;
+  border-bottom: 4px solid;
+  margin-bottom: 10px;
+}
+.new-tweet input {
+  grid-area: inputArr;
+  font-family: 'Bungee', sans-serif; /* Logo */
+  background-color: #43539C;
+  color:white;
+  justify-self: start;
+}
+.new-tweet .counter {
+  grid-area: countArr;
+  justify-self: end;
+}
+
