@@ -32,3 +32,13 @@
  #writeTweet {
   font-size: 1.25rem;
  }
+
+ nav > ul > div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+ }
+
+ nav i {
+  color: #DE5039;
+ }
