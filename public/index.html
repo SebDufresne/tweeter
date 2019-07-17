@@ -50,7 +50,16 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+
       <section class="new-tweet">
+
+        <div class="error-container">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h1>=°.°=   ごめんなさい   =^.~=</h1>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+
         <h2>Compose Tweet</h2>
         <form action='/tweets' method='POST'>
           <textarea name="text" placeholder="What are you humming about?"></textarea>
@@ -58,6 +67,7 @@
           <span class="counter">140</span>
         </form>
       </section>
+
       <div id="tweets-container">
       </div>
     </main>

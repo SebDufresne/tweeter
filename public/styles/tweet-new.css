@@ -5,6 +5,7 @@
 .new-tweet {
   display: grid;
   grid-template-areas:
+    "error"
     "header"
     "form";
   grid-template-columns: auto;  
@@ -14,6 +15,27 @@
 
 .overfill {
   color:red;
+}
+
+.new-tweet div.error-container {
+  grid-area: error;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: red;
+  font-size: 1.2rem;
+
+  border: 4px solid;
+  border-color: red;
+  border-radius: 25px;
+
+  margin: 2vh 2vw;
+  padding: 0 3vw;
+}
+
+.error-container i {
+  font-size: 4rem;
 }
 
 /*
