@@ -29,6 +29,25 @@ const data = [
   }
 ];
 
+/*
+<article class="tweet">
+  <header>
+    <img src="https://i.imgur.com/73hZDYK.png" alt="Newton">
+    <h3 class="name">Newton</h3>
+    <p class="handle">@SirIsaac</p>
+  </header>
+  <p>If I have seen further it is by standing on the shoulders of giants</p>
+  <footer>
+    <p><time datetime="">10 days ago</time></p>
+    <div class="tools">
+      <i class="fas fa-flag fa-xs"></i>
+      <i class="fas fa-retweet fa-xs"></i>
+      <i class="fas fa-heart fa-xs"></i>
+    </div>
+  </footer>
+</article>
+*/
+
 const createTweetElement = function(tweet) {
   const $tweet = $('<article>').addClass('tweet');
 

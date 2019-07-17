@@ -24,6 +24,10 @@
   list-style-type: none;
  }
 
+/*
+ * Logo section
+ */
+
  #logo {
   font-family: 'Bungee', sans-serif;
  }
@@ -46,7 +50,6 @@
   margin: 0.3vh;
   color: #DE5039;
  }
-
 
  /*
  * Red Arrow Animation
