@@ -28,7 +28,7 @@ article.tweet img {
   padding-left: 0.5vw;
 }
 
-article.tweet p.avatar {
+article.tweet p.handle {
   margin-left: auto;
   color: #888888;
   opacity: 0;
@@ -68,6 +68,10 @@ article.tweet div.tools {
   color: #43539C;
 }
 
+article.tweet div.tools i {
+  margin: 0.2vh 0.2vw;
+}
+
 /*
  * :hover
  */
@@ -78,8 +82,8 @@ article.tweet:active {
   box-shadow: 3px 3px 5px 6px #CCCCCC;
 }
 
-article.tweet:hover p.avatar,
-article.tweet:focus p.avatar,
-article.tweet:active p.avatar {
+article.tweet:hover p.handle,
+article.tweet:focus p.handle,
+article.tweet:active p.handle {
   opacity:1;
 }
