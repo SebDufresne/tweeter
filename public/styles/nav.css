@@ -40,15 +40,27 @@
   font-size: 1.25rem;
  }
 
- nav li#writeTweet {
+ li#writeTweet {
   display: flex;
   flex-flow: column;
  }
 
- nav i {
+ #writeTweet i {
   align-self: center;
   margin: 0.3vh;
   color: #DE5039;
+  padding: 1vh 1vw;
+  border : solid 4px rgba(255, 255, 255, 0.0);
+  border-radius: 90px;
+ }
+
+ #writeTweet i:hover,
+ #writeTweet i:focus,
+ #writeTweet i:active {
+  color: red;
+  border : solid 4px rgba(255, 255, 255, 0.3);
+  border-radius: 90px;
+  cursor: pointer;
  }
 
  /*
@@ -60,6 +72,6 @@
 }
 
 @keyframes mover {
-  0% { transform: translateY(-3px); } /* Negative -> up */
-  100% { transform: translateY(8px); } /* Positive -> down */
+  0% { transform: translateY(-15px); } /* Negative -> up */
+  100% { transform: translateY(-3px); } /* Positive -> down */
 }

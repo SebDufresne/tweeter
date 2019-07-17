@@ -158,4 +158,15 @@ $(document).ready(function() {
 
     event.preventDefault();
   });
+
+  /* Hide and show new Tweet Section */
+  $('#writeTweet i').click(function () {
+    if ($('.new-tweet').is(':hidden')) {
+      $('.new-tweet').slideDown('slow');
+      const $textArea = $("textarea[name='text']");
+      $textArea.focus();
+    } else {
+      $('.new-tweet').slideUp('slow');
+    }
+  });
 });
