@@ -1,56 +1,85 @@
+/*
+ * Tweet List Styling
+ */
+
 article.tweet {
   border-color: #545149;
   border: 4px solid;
-  padding: 1rem 2rem;
-  margin: 2em;
+  padding: 1vh 2vw;
+  margin: 2vh 3vw;
 }
 
-article.tweet > header {
-  display: flex;
-  align-items: center;
-  flex-flow: row;
-}
+/*
+ * Header
+ */
 
-article.tweet > footer {
+ article.tweet > header {
   display: flex;
-  align-items: center;
   flex-flow: row;
-  padding: 0 10px;
+  align-items: center;
 }
 
 article.tweet img {
-  display: block;
   max-width: 64px;
   max-height: 64px;
 }
 
-article.tweet > p {
-  border: 0;
-  border-bottom: 4px solid;
-  margin-bottom: 0;
-  padding-bottom: 1em;
-  border-color: #545149;
-}
-
-article.tweet h3.name {
-  padding-left: 10px;
+ article.tweet h3.name {
+  padding-left: 0.5vw;
 }
 
 article.tweet p.avatar {
   margin-left: auto;
   color: #888888;
-  opacity:0;
+  opacity: 0;
+}
+
+/*
+ * Main Text
+ */
+
+ article.tweet > p {
+  border: 0;
+  border-bottom: 4px solid;
+  border-color: #545149;
+
+  margin-bottom: 0;
+
+  padding-bottom: 1em;
+}
+
+/*
+ * Footer
+ */
+
+ article.tweet > footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 0 1vw;
+  margin: 1vh 1vw;
+}
+
+article.tweet > footer > p {
+  margin: 0;
 }
 
 article.tweet div.tools {
-  margin-left: auto;
   color: #43539C;
 }
 
-article.tweet:hover, article.tweet:focus, article.tweet:active {
+/*
+ * :hover
+ */
+
+article.tweet:hover,
+article.tweet:focus,
+article.tweet:active {
   box-shadow: 3px 3px 5px 6px #CCCCCC;
 }
 
-article.tweet:hover p.avatar {
+article.tweet:hover p.avatar,
+article.tweet:focus p.avatar,
+article.tweet:active p.avatar {
   opacity:1;
 }
