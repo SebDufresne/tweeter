@@ -9,8 +9,7 @@ const data = [
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
+      "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
     },
     "content": {
@@ -28,7 +27,7 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 const createTweetElement = function(tweet) {
   const $tweet = $('<article>').addClass('tweet');
@@ -62,8 +61,8 @@ const createTweetElement = function(tweet) {
   const $timeP = $('<p>');
 
   $('<time>')
-    .attr('datetime', tweet.created_at)
-    .text(tweet.created_at)
+    .attr('datetime', new Date(tweet.created_at))
+    .text(new Date(tweet.created_at))
     .appendTo($timeP);
 
   $footer.append($timeP);

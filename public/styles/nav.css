@@ -28,6 +28,10 @@
   font-family: 'Bungee', sans-serif;
  }
 
+/*
+ * Write a new tweet section
+ */
+
  #writeTweet {
   font-size: 1.25rem;
  }
@@ -42,3 +46,17 @@
   margin: 0.3vh;
   color: #DE5039;
  }
+
+
+ /*
+ * Red Arrow Animation
+ */
+
+ .moveUpDown {
+  animation: mover 1s infinite alternate;
+}
+
+@keyframes mover {
+  0% { transform: translateY(-3px); } /* Negative -> up */
+  100% { transform: translateY(8px); } /* Positive -> down */
+}
