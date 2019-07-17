@@ -24,11 +24,11 @@ article.tweet img {
   max-height: 64px;
 }
 
- article.tweet h3.name {
+ article.tweet > header h3 {
   padding-left: 0.5vw;
 }
 
-article.tweet p.handle {
+article.tweet > header p {
   margin-left: auto;
   color: #888888;
   opacity: 0;
@@ -60,15 +60,12 @@ article.tweet p.handle {
   padding: 0 1vw;
 }
 
-article.tweet > footer > p {
+article.tweet > footer p {
   margin: 0;
 }
 
-article.tweet div.tools {
+article.tweet > footer i {
   color: #43539C;
-}
-
-article.tweet div.tools i {
   margin: 0.2vh 0.2vw;
 }
 
@@ -82,8 +79,8 @@ article.tweet:active {
   box-shadow: 3px 3px 5px 6px #CCCCCC;
 }
 
-article.tweet:hover p.handle,
-article.tweet:focus p.handle,
-article.tweet:active p.handle {
+article.tweet:hover > header p,
+article.tweet:focus > header p,
+article.tweet:active > header p {
   opacity:1;
 }

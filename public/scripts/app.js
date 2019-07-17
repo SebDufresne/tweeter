@@ -33,13 +33,13 @@ const data = [
 <article class="tweet">
   <header>
     <img src="https://i.imgur.com/73hZDYK.png" alt="Newton">
-    <h3 class="name">Newton</h3>
-    <p class="handle">@SirIsaac</p>
+    <h3>Newton</h3>
+    <p>@SirIsaac</p>
   </header>
   <p>If I have seen further it is by standing on the shoulders of giants</p>
   <footer>
     <p><time datetime="">10 days ago</time></p>
-    <div class="tools">
+    <div>
       <i class="fas fa-flag fa-xs"></i>
       <i class="fas fa-retweet fa-xs"></i>
       <i class="fas fa-heart fa-xs"></i>
@@ -59,12 +59,10 @@ const createTweetElement = function(tweet) {
     .appendTo($header);
 
   $('<h3>')
-    .addClass('name')
     .text(tweet.user.name)
     .appendTo($header);
 
   $('<p>')
-    .addClass('handle')
     .text(tweet.user.handle)
     .appendTo($header);
 
@@ -86,7 +84,7 @@ const createTweetElement = function(tweet) {
 
   $footer.append($timeP);
 
-  const $divTools = $('<div>').addClass('tools');
+  const $divTools = $('<div>');
 
   $('<i>')
     .addClass('fas fa-flag fa-xs')
