@@ -49,59 +49,88 @@ const data = [
 */
 
 const createTweetElement = function(tweet) {
+
+  /*
+   * Main Structure
+   */
   const $tweet = $('<article>').addClass('tweet');
+  const $tweet_header = $('<header>');
+  const $tweet_content = $('<p>');
+  const $tweet_footer = $('<footer>');
 
-  const $header = $('<header>');
+  /*
+   * Header (Avatar, Name and Handle)
+   */
 
-  $('<img>')
+  const $tweet_avatar = $('<img>');
+  const $tweet_userName = $('<h3>');
+  const $tweet_userHandle = $('<p>');
+
+  $tweet_avatar
     .attr('src', tweet.user.avatars)
-    .attr('alt', tweet.user.name)
-    .appendTo($header);
+    .attr('alt', tweet.user.name);
 
-  $('<h3>')
-    .text(tweet.user.name)
-    .appendTo($header);
+  $tweet_userName
+    .text(tweet.user.name);
 
-  $('<p>')
-    .text(tweet.user.handle)
-    .appendTo($header);
+  $tweet_userHandle
+    .text(tweet.user.handle);
 
-  $tweet.append($header);
+  /* Assembly */
+  $tweet_header
+    .append($tweet_avatar)
+    .append($tweet_userName)
+    .append($tweet_userHandle);
 
+  /*
+   * Tweet Content
+   */
 
-  $('<p>')
-    .text(tweet.content.text)
-    .appendTo($tweet);
+  $tweet_content.text(tweet.content.text);
 
-  const $footer = $('<footer>');
+  /*
+   * Footer (CreatedOn and Tools)
+   */
 
-  const $timeP = $('<p>');
+  /* Time Section */
+  const $tweet_createdOn = $('<p>');
+  const $tweet_createdTime = $('<time>');
 
-  $('<time>')
-    .attr('datetime', new Date(tweet.created_at))
-    .text(new Date(tweet.created_at))
-    .appendTo($timeP);
+  const createdAt = new Date(tweet.created_at);
 
-  $footer.append($timeP);
+  $tweet_createdTime
+    .attr('datetime', createdAt)
+    .text(createdAt);
 
-  const $divTools = $('<div>');
+  $tweet_createdOn
+    .append($tweet_createdTime);
 
-  $('<i>')
-    .addClass('fas fa-flag fa-xs')
-    .appendTo($divTools);
+  /* Tools Section */
+  const $tweet_toolBox = $('<div>');
 
-  $('<i>')
-    .addClass('fas fa-retweet fa-xs')
-    .appendTo($divTools);
+  const $tweet_tools_flag = $('<i>').addClass('fas fa-flag fa-xs');
+  const $tweet_tools_reTweet = $('<i>').addClass('fas fa-retweet fa-xs');
+  const $tweet_tools_heart = $('<i>').addClass('fas fa-heart fa-xs');
 
-  $('<i>')
-    .addClass('fas fa-heart fa-xs')
-    .appendTo($divTools);
+  $tweet_toolBox
+    .append($tweet_tools_flag)
+    .append($tweet_tools_reTweet)
+    .append($tweet_tools_heart);
+ 
+  /* Assembly */
+  $tweet_footer
+    .append($tweet_createdOn)
+    .append($tweet_toolBox);
 
-  $footer.append($divTools);
+  /*
+   * Tweet Assembly
+   */
 
-  $tweet.append($footer);
-
+  $tweet
+    .append($tweet_header)
+    .append($tweet_content)
+    .append($tweet_footer);
+  
   return $tweet;
 };
 
