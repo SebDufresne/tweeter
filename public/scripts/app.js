@@ -142,6 +142,10 @@ const showError = (error) => {
   });
 };
 
+const hideError = () => {
+  $('.error-container').slideUp();
+};
+
 /* Post new tweet */
 $(document).ready(function() {
   $('.error-container').hide();  /* Starts error as hidden */
@@ -158,6 +162,7 @@ $(document).ready(function() {
     } else {
       $.post($form.attr('action'), $form.serialize())
         .then(() => {
+          hideError();
           loadLatestTweet();
           $inputText.val('');
           $counterValue.text('140');
