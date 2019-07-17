@@ -17,8 +17,6 @@ const tweetData = {
   "created_at": 1461116232227
 };
 
-
-
 const createTweetElement = function(tweet) {
   const $tweet = $('<article>').addClass('tweet');
 
