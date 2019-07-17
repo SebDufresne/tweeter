@@ -1,52 +1,92 @@
+/*
+ * New Tweet Styling
+ */
+
 .new-tweet {
   display: grid;
   grid-template-areas:
     "header"
     "form";
   grid-template-columns: auto;  
-  grid-template-rows: auto auto;
-  margin: 2em;
-}
-
-.new-tweet h2 {
-  grid-area: header;
-  justify-self: center;
-}
-
-.new-tweet form {
-  grid-area: form;
-  display: grid;
-  grid-template-areas:
-    "textArr textArr textArr"
-    "inputArr . countArr";
-  grid-template-columns: auto auto auto;  
-  grid-template-rows: auto auto;
-}
-.new-tweet textarea {
-  grid-area: textArr;
-  resize: none;  /* Disable multi-row */
-  font-weight: bold;
-  color: #545149;
-  border: 0;
-  border-bottom: 4px solid;
-  margin-bottom: 10px;
-  border-color: #545149;
-  background-color: #f4f1ec;
-}
-.new-tweet input {
-  grid-area: inputArr;
-  font-family: 'Bungee', sans-serif; /* Logo */
-  background-color: #43539C;
-  color:white;
-  justify-self: start;
-}
-.new-tweet .counter {
-  grid-area: countArr;
-  font-family: 'Bungee', sans-serif; /* Logo */
-  justify-self: end;
+  grid-template-rows: auto;
+  margin: 2vh 3vw;
 }
 
 .overfill {
   color:red;
 }
 
+/*
+ * Grid: Header
+ */
+
+.new-tweet h2 {
+  grid-area: header;
+  justify-self: center;
+}
+
+/*
+ * Grid: Form Section
+ */
+
+.new-tweet form {
+  grid-area: form;
+  display: grid;
+  grid-template-areas:
+    "textArea textArea textArea"
+    "tweetButton . counter";
+  grid-template-columns: auto auto auto;  
+  grid-template-rows: auto auto;
+}
+
+/*
+ * Grid: Form Section -> textArea Section
+ */
+
+.new-tweet textarea {
+  grid-area: textArea;
+  background-color: #f4f1ec;
+
+  /* Removes decoration to textArea */
+  resize:none;
+  outline: none;
+
+  color: #545149;
+
+  border: 0;
+  border-bottom: 4px solid;
+  border-color: #545149;
+
+  margin-bottom: 0.7vh;
+}
+
+/*
+ * Grid: Form Section -> tweetButton Section
+ */
+
+.new-tweet input {
+  grid-area: tweetButton;
+  justify-self: start;
+
+  font-family: 'Bungee', sans-serif; /* Logo */
+  font-size: 1.2rem;
+  color:white;
+  
+  margin: 0.3vh 1vw;
+  padding: 0.5vh 0.5vw;
+
+  background-color: #43539C;
+}
+
+/*
+ * Grid: Form Section -> counter Section
+ */
+
+.new-tweet .counter {
+  grid-area: counter;
+  justify-self: end;
+
+  font-family: 'Bungee', sans-serif; /* Logo */
+
+  margin: 0.3vh 1vw;
+}
