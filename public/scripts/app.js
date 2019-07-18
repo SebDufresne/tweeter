@@ -183,4 +183,14 @@ $(document).ready(function() {
       $('.new-tweet').slideUp('slow');
     }
   });
+
+
+  /* Hide and show new Tweet Section */
+  $(document).scroll(function() {
+    if ($(window).scrollTop() !== 0) {
+      $("#writeTweet").hide();
+    } else {
+      $("#writeTweet").show();
+    }
+  });
 });
