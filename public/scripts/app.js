@@ -189,8 +189,15 @@ $(document).ready(function() {
   $(document).scroll(function() {
     if ($(window).scrollTop() !== 0) {
       $("#writeTweet").hide();
+      $(".backToTop").show();
     } else {
       $("#writeTweet").show();
+      $(".backToTop").hide();
     }
+  });
+
+
+  $(".backToTop").click(function() {
+    window.scrollTo(0, 0);
   });
 });
