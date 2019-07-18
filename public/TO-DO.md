@@ -5,3 +5,9 @@ Seperate the .js
 -> manageTweets
 
 Implement "enter" for the text field
+
+Remove error message placeholder
+
+Make dates "clean"
+
+implement Sass
