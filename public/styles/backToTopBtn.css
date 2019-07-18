@@ -1,0 +1,25 @@
+.backToTop {
+  position: fixed;
+  color: white;
+  background-color: red;
+  position: fixed;
+  bottom: 4vh;
+  right: 4vw;
+
+  font-size: 3rem;
+
+  width:  5rem;
+  height: 5rem;
+  padding: 1rem;
+
+  text-align: center;
+
+  border-radius: 40px;
+}
+
+.backToTop:hover,
+.backToTop:focus,
+.backToTop:active {
+  color: yellow;
+  box-shadow: 1px 1px 2px 3px #CCCCCC;
+}
