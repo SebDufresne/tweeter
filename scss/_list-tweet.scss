@@ -5,53 +5,65 @@
  article.tweet {
   border-color: $color-soft-brown;
   border: 4px solid;
-  margin: 2vh 3vw;
-  padding: 1vh 2vw;
+  margin: 0.5rem;
+  padding: 0.5rem;
 
+    /* Top portion of new tweet */
   > header {
     display: flex;
     flex-flow: row;
     align-items: center;
 
+    /* Hides the Avatar */
     img {
       display: none;
     }
 
+    /* Display Name */
     h3 {
       padding-left: 0.02vmin;
     }
 
+    /* Hides the Handle */
     > p {
       display: none;
     }
   }
 
+  /* Main body of Tweet */
   > body {
     border: 0;
     margin-bottom: 0;  
     padding-bottom: 1em;
   }
 
+  /* Lower part of Tweet */
   > footer {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     margin: 1vmin;
-    padding: 0 1vw;
+    padding: 0 0.1vmin;
 
+    /* Time display */
     p {
       margin: 0;
       width: 95%;
     }
 
+    /* Hides tools, by default */
     > div {
       display: none;
     }
   }
+
+  /* Displays shadow box */
   &:hover,
   &:focus,
   &:active {
     box-shadow: $shadow;
+
+    /* Displays Handle */
     > header p,
     > header p,
     > header p {
@@ -62,6 +74,9 @@
 
 @media (min-width: 600px) {
   article.tweet {
+
+
+    /* Adds back the Tools Icons */
     > footer {  
       > div {
         display: block;
@@ -79,6 +94,8 @@
 @media (min-width: 768px) {
   article.tweet {
     > header {
+
+      /* Adds back the Handle in tablet mode */
       > p {
         display: block;
         margin-left: auto;
@@ -86,6 +103,8 @@
         opacity: 0;
       }
     }
+
+    /* Makes the bottom border re-appear in tablet mode */
     > body {
       border-bottom: 4px solid;
       border-color: $color-soft-brown;
@@ -95,9 +114,9 @@
 
 @media (min-width: 1024px) {
   article.tweet {
-  
     > header {
-  
+      
+      /* Displays Avatar picture */
       img {
         display: inline;
         max-width: 64px;

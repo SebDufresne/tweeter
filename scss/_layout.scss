@@ -1,19 +1,24 @@
+/*
+ * Overall flow of page
+ */
+
 html {
   scroll-behavior: smooth;
   font-size: 17px;
 }
 
+/* Main section of app */
 body {
   min-width: 350px;
   color: $color-soft-brown;
   background-color: $color-text-white;
   font-size: 1.5rem;
 
-
   > main {
     display: flex;
     flex-flow: column;
 
+    /* Section with Profile Picture */
     > header {
       position:relative;
     
@@ -34,18 +39,17 @@ body {
         margin-right: auto;
       }
     }
-    > #tweets {
-
-    }
   }
 }
 
+/* Width of tweet section */
 #container > section {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Tablet Size */
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -53,24 +57,38 @@ body {
   body {
     > main {
       flex-flow: row;
+
+      /* Positionning Profile Picture Section */
       > header {
         width: 33%;
         height: auto;
         padding-top: 5%;
       }
+
+
+      /* Tweet Section Takes 66% of width */
       > div {
         width: 67%;
       }
+
+
       > #tweets {
         margin-top: 120px; /* Project Requirements */
       }
     }
   }
+  #container > section {
+    width: 100%;
+  }
 }
+
+/* Desktop Size */
 @media (min-width: 1024px) {
   html {
     font-size: 16px;
   }
+
+  /* Fix Max Width */
   body {
     max-width: 1024px;
     margin-left:auto;
