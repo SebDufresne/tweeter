@@ -43,21 +43,19 @@
     </header>
     
 
-
     <!-- Page-specific (main) content here -->
     <main class="container">
 
 
-      <section class="new-tweet">
-        <div class="hidden-error">
+      <section class="hidden new-tweet">
+        <div class="hidden error">
           <div class="error-container">
             <i class="fas fa-exclamation-triangle"></i>
-            <h1>=°.°=   ごめんなさい   =^.~=</h1>
+            <h1></h1>
             <i class="fas fa-exclamation-triangle"></i>
           </div>
         </div>
 
-        <h2>Compose Tweet</h2>
         <form action='/tweets' method='POST'>
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">

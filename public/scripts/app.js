@@ -30,7 +30,7 @@ const createTweetElement = tweet => {
    */
   const $tweet = $('<article>').addClass('tweet');
   const $tweet_header = $('<header>');
-  const $tweet_content = $('<p>');
+  const $tweet_body = $('<body>');
   const $tweet_footer = $('<footer>');
 
   /*
@@ -51,17 +51,22 @@ const createTweetElement = tweet => {
   $tweet_userHandle
     .text(tweet.user.handle);
 
-  /* Assembly */
+  /* Header Assembly */
   $tweet_header
     .append($tweet_avatar)
     .append($tweet_userName)
     .append($tweet_userHandle);
 
   /*
-   * Tweet Content
+   * Tweet Body
    */
 
+  const $tweet_content = $('<p>');
+
   $tweet_content.text(tweet.content.text);
+
+  $tweet_body
+    .append( $tweet_content);
 
   /*
    * Footer (CreatedOn and Tools)
@@ -103,7 +108,7 @@ const createTweetElement = tweet => {
 
   $tweet
     .append($tweet_header)
-    .append($tweet_content)
+    .append($tweet_body)
     .append($tweet_footer);
   
   return $tweet;
@@ -135,15 +140,15 @@ const loadLatestTweet = () => {
 loadTweets();
 
 const showError = (error) => {
-  $('.hidden-error').slideUp(400, () => {
+  $('.hidden.error').slideUp(400, () => {
     const $errorMsg = $('.error-container h1');
     $errorMsg.text(error);
-    $('.hidden-error').slideDown();
+    $('.hidden.error').slideDown();
   });
 };
 
 const hideError = () => {
-  $('.hidden-error').slideUp();
+  $('.hidden.error').slideUp();
 };
 
 /* Post new tweet */

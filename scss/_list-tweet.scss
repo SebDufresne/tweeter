@@ -9,6 +9,7 @@
   padding: 1vh 2vw;
 
   > header {
+    display: flex;
     flex-flow: row;
     align-items: center;
 
@@ -21,14 +22,14 @@
       padding-left: 0.5vw;
     }
 
-    p {
+    > p {
       margin-left: auto;
       color: #888888;
       opacity: 0;
     }
   }
 
-  > p {
+  > body {
     border: 0;
     border-bottom: 4px solid;
     border-color: $color-soft-brown;

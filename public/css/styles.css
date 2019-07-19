@@ -115,6 +115,7 @@ article.tweet {
   margin: 2vh 3vw;
   padding: 1vh 2vw; }
   article.tweet > header {
+    display: flex;
     flex-flow: row;
     align-items: center; }
     article.tweet > header img {
@@ -122,11 +123,11 @@ article.tweet {
       max-height: 64px; }
     article.tweet > header h3 {
       padding-left: 0.5vw; }
-    article.tweet > header p {
+    article.tweet > header > p {
       margin-left: auto;
       color: #888888;
       opacity: 0; }
-  article.tweet > p {
+  article.tweet > body {
     border: 0;
     border-bottom: 4px solid;
     border-color: #545149;
@@ -183,8 +184,6 @@ article.tweet:active > header p {
   */ }
   .new-tweet .overfill {
     color: red; }
-  .new-tweet .hidden-error {
-    display: none; }
   .new-tweet .error-container {
     grid-area: error;
     display: flex;
@@ -270,3 +269,6 @@ article.tweet:active > header p {
 .backToTop:active {
   color: #CF9A3E;
   box-shadow: 1px 1px 2px 3px #CCCCCC; }
+
+.hidden {
+  display: none; }
