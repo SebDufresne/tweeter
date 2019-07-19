@@ -5,7 +5,7 @@
  */
 
 
- /*
+/*
  * Frequently used pointers
  */
 const MAX_CHARS = 140;
@@ -72,7 +72,7 @@ const createTweetElement = tweet => {
 
   $tweet_createdTime
     .attr('datetime', createdAt)
-    .text(jQuery.timeago(createdAt)); /* Converts time a a readable string */
+    .text(jQuery.timeago(createdAt)); /* Converts time to a readable string */
 
   $tweet_createdOn
     .append($tweet_createdTime);
@@ -207,7 +207,7 @@ $(document).ready(function() {
 
   /*
   * Listen to submit button
-  * If tweet pass validation, submit it
+  * If tweet passes validation, submit it
   * reinitialize the form
   * And load the tweet in the view
   */
@@ -236,7 +236,7 @@ $(document).ready(function() {
   */
   $('#writeTweet i').click(function() {
 
-    /* If the section is hidden, show it and move cursor in textArea */
+    /* If the section is hidden, show it and move the cursor in the textArea */
     if ($('.new-tweet').is(':hidden')) {
       $('.new-tweet').slideDown('slow');
       const $textArea = $("textarea[name='text']");
