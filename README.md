@@ -47,7 +47,7 @@ When the user starts scrolling, the top right arrows will disappear and will be 
 ## Current Limitations/Bugs/Future Features
 
 - BUG: Can't submit a post by simply pressing RETURN.
-- BUG: The shadow around the Tweet Button remains there once the form has been submitted.
+- BUG: The shadow around the Tweet Button remains once the form has been submitted.
 - BUG: Once in mobile mode, when the screen is further reduced, the text will overflow the container.
 - TO-DO: Replace the Tweet demarcation line by an HR instead of styling a border.
 - TO-DO: Review the responsive units used in tablet mode.
