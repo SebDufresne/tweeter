@@ -80,7 +80,7 @@ const createTweetElement = tweet => {
 
   $tweet_createdTime
     .attr('datetime', createdAt)
-    .text(createdAt);
+    .text(jQuery.timeago(createdAt));
 
   $tweet_createdOn
     .append($tweet_createdTime);
