@@ -4,25 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-/*
-<article class="tweet">
-  <header>
-    <img src="https://i.imgur.com/73hZDYK.png" alt="Newton">
-    <h3>Newton</h3>
-    <p>@SirIsaac</p>
-  </header>
-  <p>If I have seen further it is by standing on the shoulders of giants</p>
-  <footer>
-    <p><time datetime="">10 days ago</time></p>
-    <div>
-      <i class="fas fa-flag fa-xs"></i>
-      <i class="fas fa-retweet fa-xs"></i>
-      <i class="fas fa-heart fa-xs"></i>
-    </div>
-  </footer>
-</article>
-*/
 
+ /*
+ * Frequently used pointers
+ */
+const MAX_CHARS = 140;
+const $button_backToTop = '.backToTop';
+const $button_writeTweet = '#writeTweet';
+
+/*
+* Create the HTML body of a new tweet
+*/
 const createTweetElement = tweet => {
 
   /*
@@ -80,7 +72,7 @@ const createTweetElement = tweet => {
 
   $tweet_createdTime
     .attr('datetime', createdAt)
-    .text(jQuery.timeago(createdAt));
+    .text(jQuery.timeago(createdAt)); /* Converts time a a readable string */
 
   $tweet_createdOn
     .append($tweet_createdTime);
@@ -97,7 +89,7 @@ const createTweetElement = tweet => {
     .append($tweet_tools_reTweet)
     .append($tweet_tools_heart);
  
-  /* Assembly */
+  /* Footer Assembly */
   $tweet_footer
     .append($tweet_createdOn)
     .append($tweet_toolBox);
@@ -114,6 +106,11 @@ const createTweetElement = tweet => {
   return $tweet;
 };
 
+/*
+* Append an array of tweets at the end of #tweets-container
+* in reverse order than they were received
+*/
+
 const renderTweets = function(tweets) {
   tweets = tweets.reverse();
   for (const tweet of tweets) {
@@ -121,15 +118,28 @@ const renderTweets = function(tweets) {
   }
 };
 
+/*
+* Load all tweets
+*/
 const loadTweets = () => {
   $.get('/tweets')
     .then(tweets => renderTweets(tweets))
     .fail(error => console.error(error));
 };
 
+loadTweets(); /* Load all tweets manually */
+
+/*
+* Prepend a given tweet at the beginning of #tweets-container
+*/
+
 const renderLatestTweet = (tweet) => {
   $('#tweets-container').prepend(createTweetElement(tweet));
 };
+
+/*
+* Retrieve last (most recent) tweet in the Tweet storage array
+*/
 
 const loadLatestTweet = () => {
   $.get('/tweets')
@@ -137,22 +147,37 @@ const loadLatestTweet = () => {
     .fail(error => console.error(error));
 };
 
-loadTweets();
-
+/*
+* Hide error section
+* Set the message
+* Display error section
+*/
 const showError = (error) => {
-  $('.hidden.error').slideUp(400, () => {
+  $('.hidden.error').slideUp(400, () => {  /* Hide Section*/
+
     const $errorMsg = $('.error-container h1');
     $errorMsg.text(error);
-    $('.hidden.error').slideDown();
+ 
+    $('.hidden.error').slideDown(); /* Display Section*/
   });
 };
 
+/*
+* Hide error section
+*/
 const hideError = () => {
   $('.hidden.error').slideUp();
 };
 
-/* Post new tweet */
+
+/*
+* Section With Event Listeners (active once document is ready)
+*/
 $(document).ready(function() {
+
+  /*
+  * Post new tweet
+  */
   $('form').submit(function(event) {
     const $form = $(this);
 
@@ -161,15 +186,15 @@ $(document).ready(function() {
 
     if (!$inputText.val()) {
       showError("Can't be empty");
-    } else if ($inputText.val().length > 140) {
-      showError("No more than 140 characters");
+    } else if ($inputText.val().length > MAX_CHARS) {
+      showError(`No more than ${MAX_CHARS} characters`);
     } else {
       $.post($form.attr('action'), $form.serialize())
         .then(() => {
           hideError();
           loadLatestTweet();
           $inputText.val('');
-          $counterValue.text('140');
+          $counterValue.text(`${MAX_CHARS}`);
         })
         .fail(error => console.error(error));
     }
@@ -177,7 +202,9 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  /* Hide and show new Tweet Section */
+  /*
+  * Hide and show New Tweet Section
+  */
   $('#writeTweet i').click(function () {
     if ($('.new-tweet').is(':hidden')) {
       $('.new-tweet').slideDown('slow');
@@ -189,19 +216,23 @@ $(document).ready(function() {
   });
 
 
-  /* Hide and show new Tweet Section */
+  /*
+  * Listen to Scroll Event on Document
+  * Hide and Show Buttons to move around the page
+  */
   $(document).scroll(function() {
+
     if ($(window).scrollTop() !== 0) {
-      $("#writeTweet").hide();
-      $(".backToTop").show();
+      $($button_writeTweet).hide();
+      $($button_backToTop).show();
     } else {
-      $("#writeTweet").show();
-      $(".backToTop").hide();
+      $($button_writeTweet).show();
+      $($button_backToTop).hide();
     }
   });
 
 
-  $(".backToTop").click(function() {
+  $($button_backToTop).click(function() {
     window.scrollTo(0, 0);
   });
 });

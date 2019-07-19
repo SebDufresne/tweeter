@@ -1,3 +1,7 @@
+/*
+* Count the number of characters in the textarea
+*/
+
 $(document).ready(function() {
   const maxChar = $(".counter").text();
   
