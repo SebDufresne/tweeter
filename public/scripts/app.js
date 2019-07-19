@@ -58,7 +58,7 @@ const createTweetElement = tweet => {
   $tweet_content.text(tweet.content.text);
 
   $tweet_body
-    .append( $tweet_content);
+    .append($tweet_content);
 
   /*
    * Footer (CreatedOn and Tools)
@@ -234,16 +234,17 @@ $(document).ready(function() {
   * Hide and show New Tweet Section
   */
   $('#writeTweet i').click(function() {
+    const $hiddenTweetContainer = '#tweets > div.hidden';
 
     /* If the section is hidden, show it and move the cursor in the textArea */
-    if ($('.new-tweet').is(':hidden')) {
-      $('.new-tweet').slideDown('slow');
+    if ($($hiddenTweetContainer).is(':hidden')) {
+      $($hiddenTweetContainer).slideDown('slow');
       const $textArea = $("textarea[name='text']");
       $textArea.focus();
 
     /* If the section is shown, hide it */
     } else {
-      $('.new-tweet').slideUp('slow');
+      $($hiddenTweetContainer).slideUp('slow');
     }
   });
 

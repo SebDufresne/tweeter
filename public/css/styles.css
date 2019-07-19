@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap");
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+@import url("https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap");
 html {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+.hidden {
+  display: none; }
 
 html {
   scroll-behavior: smooth;
@@ -19,7 +22,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 1.5rem; }
-  body > header {
+  body > main > header {
     position: relative;
     height: 400px;
     /* Project Requirements */
@@ -30,16 +33,14 @@ body {
     color: #FFFFFF;
     background-color: #CF9A3E;
     background-image: url("/images/green-dust-and-scratches.png"); }
-    body > header > div {
+    body > main > header > div {
       margin-left: auto;
       margin-right: auto; }
 
-main {
+#container > section {
   width: 90%;
   margin-left: auto;
-  margin-right: auto;
-  color: #545149;
-  background-color: #f4f1ec; }
+  margin-right: auto; }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -269,6 +270,3 @@ article.tweet:active > header p {
 .backToTop:active {
   color: #CF9A3E;
   box-shadow: 1px 1px 2px 3px #CCCCCC; }
-
-.hidden {
-  display: none; }

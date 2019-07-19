@@ -1,26 +1,29 @@
-// Import Fonts
-@import url('https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap');
-
-// Default variables
-@import "variables";
-
-// Default layout
+// Given Base Layout (do not modify)
 @import 'base';
 
-// Page Layout
+// External fonts libraries
+@import url('https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap');
+
+// Variables for the project
+@import "variables";
+
+// Utilitarian classes
+@import 'utilities';
+
+// Basic Layout of the site
 @import 'layout';
 
-// navigation style
+// Navigation Menu
 @import 'nav';
 
-// navigation style
+// List of Tweets
 @import 'list-tweet';
 
-// navigation style
+// New Tweet Form
 @import 'new-tweet';
 
-// navigation style
+// Back to Top Button
 @import 'back-to-top';
 
-// navigation style
-@import 'utilities';
+// Responsive Break Points
+@import 'responsive';
