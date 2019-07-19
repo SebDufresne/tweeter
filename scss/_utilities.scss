@@ -1,3 +1,18 @@
+/*
+* Quick Classes to help structure the elements
+*/
+
+/* Hides an element */
+
 .hidden {
   display: none;
 }
+
+ /*
+ * Animate Up and Down
+ */
+
+ .moveUpDown {
+  animation: mover 1s infinite alternate;
+}
+

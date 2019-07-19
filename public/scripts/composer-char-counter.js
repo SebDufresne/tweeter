@@ -20,20 +20,4 @@ $(document).ready(function() {
       $($counter).removeClass('overfill');
     }
   });
-
-  /*
-  * Listen to see if character is 'ENTER'
-  * If so, submit form
-  * BROKEN: Won't pass through the validation process can submit empty tweet
-  * KEEP DISABLED UNTIL FUTURE FIX
-  */
-  // $("textarea").keyup(function(key) {
-  //   const $form = $(this).closest("form");
-  //   const enterKeyCode = 13;
-
-  //   if (key.keyCode === enterKeyCode) {
-  //     $form.submit();
-  //   }
-  // });
-
 });

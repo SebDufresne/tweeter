@@ -1,25 +1,27 @@
+/*
+* Style for "Back To Top" button, at bottom right
+*/
+
 .backToTop {
   position: fixed;
-  color: white;
-  background-color: $color-vibrant-red;
-  position: fixed;
-  bottom: 4vh;
-  right: 4vw;
-
-  font-size: 3rem;
+  bottom: 4vmin;
+  right: 4vmin;
 
   width:  5rem;
   height: 5rem;
   padding: 1rem;
+  border-radius: 40px;
 
+  color: white;
+  font-size: 3rem;
   text-align: center;
 
-  border-radius: 40px;
-}
+  background-color: $color-vibrant-red;
 
-.backToTop:hover,
-.backToTop:focus,
-.backToTop:active {
-  color: $color-background-orange;
-  box-shadow: 1px 1px 2px 3px #CCCCCC;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-banner-blue;
+    box-shadow: 1px 1px 2px 3px $color-shadow-gray;
+  }
 }

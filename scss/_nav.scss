@@ -9,69 +9,124 @@ nav {
   right: 0;
   z-index: 1;
 
+  min-width: 350px;
+
   height: 120px; /* Project Requirements */
   padding: 1.5em;
 
-  color: #FFFFFF;
+  color: white;
   background-color: $color-banner-blue;
 
-  ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Logo */
+  h1 {
+    font-family: $font-logo;
+    font-size: 2rem;
+  }
+
+  div {
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    
-    list-style-type: none;
+    flex-flow: column;
+
+
+    /* Write a New Tweet */
+    h2 {
+      align-self: center;
+      display: none;
+      font-size: 1.75vmin;
+    }
+
+    /* Moving Arrows */
+    i {
+      align-self: center;
+
+      color: $color-soft-red;
+      font-size: 2.6em;
+
+      padding: 0.1em;
+
+      @keyframes mover {
+        0% { transform: translateY(-15px); } /* Negative -> up */
+        100% { transform: translateY(30px); } /* Positive -> down */
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color-vibrant-red;
+        cursor: pointer;
+      }
+    }  
   }
 }
 
-/*
- * Logo section
- */
+@media (min-width:768 px) {
+  nav {
 
- #logo {
-  font-family: $font-logo;
- }
+    /* Logo */
+    h1 {
+      font-size: 3vmin;
+    }
+  
+    div {
 
-/*
- * Write a new tweet section
- */
-
- #writeTweet {
-  font-size: 1.25rem;
- }
-
-li#writeTweet {
-  display: flex;
-  flex-flow: column;
-
-  i {
-    align-self: center;
-    margin: 0.3vh;
-    color: $color-soft-red;
-    padding: 1vh 1vw;
-    border : solid 4px rgba(255, 255, 255, 0.0);
-    border-radius: 40px;
-   }
+      /* Write a New Tweet */
+      h2 {
+        font-size: 1.75vmin;
+      }
+      /* Moving Arrows */
+      i {
+       }
+        
+    }
+  }
 }
+@media (min-width: 1024px) {
+  nav {
+    max-width: 1024px;
+    margin-left:auto;
+    margin-right:auto;
 
-#writeTweet i:hover,
-#writeTweet i:focus,
-#writeTweet i:active {
-  color: $color-vibrant-red;
-  border : solid 4px rgba(255, 255, 255, 0.3);
-  border-radius: 40px;
-  cursor: pointer;
-}
+    /* Logo */
+    h1 {
+      font-size: 3vmin;
+    }
+  
+    div {
 
- /*
- * Red Arrow Animation
- */
+      /* Write a New Tweet */
+      h2 {
+        display: block;
+        font-size: 1.75vmin;
+      }
+      /* Moving Arrows */
+      i {
 
-.moveUpDown {
-  animation: mover 1s infinite alternate;
-}
+        font-size: 1.4em;
+        padding: 1vmin;
 
-@keyframes mover {
-  0% { transform: translateY(-15px); } /* Negative -> up */
-  100% { transform: translateY(-3px); } /* Positive -> down */
+        border : solid 4px rgba(255, 255, 255, 0.0);
+        border-radius: 40px;
+  
+        @keyframes mover {
+          0% { transform: translateY(-15px); } /* Negative -> up */
+          100% { transform: translateY(5px); } /* Positive -> down */
+        }
+        
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-vibrant-red;
+          border : solid 4px rgba(255, 255, 255, 0.3);
+          border-radius: 40px;
+          cursor: pointer;
+        }
+      }
+        
+    }
+  }
 }

@@ -179,7 +179,7 @@ const validateTweet = (tweetText) => {
     showError("Can't be empty");
     return false;
   } else if (tweetText.length > MAX_CHARS) {
-    showError(`No more than ${MAX_CHARS} characters`);
+    showError(`Too many characters`);
     return false;
   }
   return true;
@@ -194,6 +194,7 @@ const validateTweet = (tweetText) => {
 const reinitializeForm = ($form) => {
   const $inputText = $form.find('textarea[name="text"]');
   const $counterValue = $form.find('span');
+  const $inputButton = $form.find('input[value="Tweet"]');
 
   hideError();
   $inputText.val('');

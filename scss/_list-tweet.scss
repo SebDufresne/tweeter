@@ -14,28 +14,21 @@
     align-items: center;
 
     img {
-      max-width: 64px;
-      max-height: 64px;
+      display: none;
     }
 
     h3 {
-      padding-left: 0.5vw;
+      padding-left: 0.02vmin;
     }
 
     > p {
-      margin-left: auto;
-      color: #888888;
-      opacity: 0;
+      display: none;
     }
   }
 
   > body {
     border: 0;
-    border-bottom: 4px solid;
-    border-color: $color-soft-brown;
-  
-    margin-bottom: 0;
-  
+    margin-bottom: 0;  
     padding-bottom: 1em;
   }
 
@@ -43,32 +36,73 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    margin: 1vh 1vw;
+    margin: 1vmin;
     padding: 0 1vw;
 
     p {
       margin: 0;
+      width: 95%;
     }
 
-    i {
-      color: $color-banner-blue;
-      margin: 0.2vh 0.2vw;
+    > div {
+      display: none;
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: $shadow;
+    > header p,
+    > header p,
+    > header p {
+      opacity:1;
     }
   }
 }
 
-/*
- * :hover
- */
-
-article.tweet:hover,
-article.tweet:focus,
-article.tweet:active {
-  box-shadow: $shadow;
+@media (min-width: 600px) {
+  article.tweet {
+    > footer {  
+      > div {
+        display: block;
+        width: 21%;
+        margin-left:auto;
+        i {
+          color: $color-banner-blue;
+          margin: 0.2vmin;
+        }
+      }
+    }
+  }
 }
 
-article.tweet:hover > header p,
-article.tweet:focus > header p,
-article.tweet:active > header p {
-  opacity:1;
+@media (min-width: 768px) {
+  article.tweet {
+    > header {
+      > p {
+        display: block;
+        margin-left: auto;
+        color: #888888;
+        opacity: 0;
+      }
+    }
+    > body {
+      border-bottom: 4px solid;
+      border-color: $color-soft-brown;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  article.tweet {
+  
+    > header {
+  
+      img {
+        display: inline;
+        max-width: 64px;
+        max-height: 64px;
+      }
+    }
+  }
 }
