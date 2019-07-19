@@ -65,18 +65,18 @@ body {
         padding-top: 5%;
       }
 
-
       /* Tweet Section Takes 66% of width */
       > div {
         width: 67%;
       }
 
-
+      /* Contains Tweets and New Tweets */
       > #tweets {
         margin-top: 120px; /* Project Requirements */
       }
     }
   }
+  
   #container > section {
     width: 100%;
   }
