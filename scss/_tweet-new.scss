@@ -2,7 +2,7 @@
  * New Tweet Styling
  */
 
-.new-tweet {
+ .new-tweet {
   display: grid;
   grid-template-areas:
     "error"
@@ -14,7 +14,7 @@
 }
 
 .overfill {
-  color:red;
+  color:$color-vibrant-red;
 }
 
 .new-tweet div.error-container {
@@ -23,11 +23,11 @@
   justify-content: space-between;
   align-items: center;
 
-  color: red;
+  color: $color-vibrant-red;
   font-size: 1.2rem;
 
   border: 4px solid;
-  border-color: red;
+  border-color: $color-vibrant-red;
   border-radius: 25px;
 
   margin: 2vh 2vw;
@@ -73,11 +73,11 @@
   resize:none;
   outline: none;
 
-  color: #545149;
+  color: $color-soft-brown;
 
   border: 0;
   border-bottom: 4px solid;
-  border-color: #545149;
+  border-color: $color-soft-brown;
 
   margin-bottom: 0.7vh;
 }
@@ -97,7 +97,7 @@
   margin: 0.3vh 1vw;
   padding: 0.5vh 0.5vw;
 
-  background-color: #43539C;
+  background-color: $color-banner-blue;
 }
 
 .new-tweet input:hover,

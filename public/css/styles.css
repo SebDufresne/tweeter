@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap");
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 1.5rem; }
+  body > header {
+    position: relative;
+    height: 400px;
+    /* Project Requirements */
+    width: 100%;
+    margin-top: 120px;
+    /* Project Requirements */
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #CF9A3E;
+    background-image: url("/images/green-dust-and-scratches.png"); }
+    body > header > div {
+      margin-left: auto;
+      margin-right: auto; }
+
+main {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #545149;
+  background-color: #f4f1ec; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 120px;
+  /* Project Requirements */
+  padding: 1.5em;
+  color: #FFFFFF;
+  background-color: #4056A1; }
+
+nav ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  list-style-type: none; }
+
+/*
+ * Logo section
+ */
+#logo {
+  font-family: 'Bungee', sans-serif; }
+
+/*
+ * Write a new tweet section
+ */
+#writeTweet {
+  font-size: 1.25rem; }
+
+li#writeTweet {
+  display: flex;
+  flex-flow: column; }
+
+#writeTweet i {
+  align-self: center;
+  margin: 0.3vh;
+  color: #DE5039;
+  padding: 1vh 1vw;
+  border: solid 4px rgba(255, 255, 255, 0);
+  border-radius: 40px; }
+
+#writeTweet i:hover,
+#writeTweet i:focus,
+#writeTweet i:active {
+  color: red;
+  border: solid 4px rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  cursor: pointer; }
+
+/*
+ * Red Arrow Animation
+ */
+.moveUpDown {
+  animation: mover 1s infinite alternate; }
+
+@keyframes mover {
+  0% {
+    transform: translateY(-15px); }
+  /* Negative -> up */
+  100% {
+    transform: translateY(-3px); }
+  /* Positive -> down */ }
+
+/*
+ * Tweet List Styling
+ */
+article.tweet {
+  border-color: #545149;
+  border: 4px solid;
+  margin: 2vh 3vw;
+  padding: 1vh 2vw; }
+
+/*
+ * Header
+ */
+article.tweet > header {
+  display: flex;
+  flex-flow: row;
+  align-items: center; }
+
+article.tweet img {
+  max-width: 64px;
+  max-height: 64px; }
+
+article.tweet > header h3 {
+  padding-left: 0.5vw; }
+
+article.tweet > header p {
+  margin-left: auto;
+  color: #888888;
+  opacity: 0; }
+
+/*
+ * Main Text
+ */
+article.tweet > p {
+  border: 0;
+  border-bottom: 4px solid;
+  border-color: #545149;
+  margin-bottom: 0;
+  padding-bottom: 1em; }
+
+/*
+ * Footer
+ */
+article.tweet > footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin: 1vh 1vw;
+  padding: 0 1vw; }
+
+article.tweet > footer p {
+  margin: 0; }
+
+article.tweet > footer i {
+  color: #4056A1;
+  margin: 0.2vh 0.2vw; }
+
+/*
+ * :hover
+ */
+article.tweet:hover,
+article.tweet:focus,
+article.tweet:active {
+  box-shadow: 3px 3px 5px 6px #CCCCCC; }
+
+article.tweet:hover > header p,
+article.tweet:focus > header p,
+article.tweet:active > header p {
+  opacity: 1; }
+
+/*
+ * New Tweet Styling
+ */
+.new-tweet {
+  display: grid;
+  grid-template-areas: "error" "header" "form";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  margin: 2vh 3vw; }
+
+.overfill {
+  color: red; }
+
+.new-tweet div.error-container {
+  grid-area: error;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  font-size: 1.2rem;
+  border: 4px solid;
+  border-color: red;
+  border-radius: 25px;
+  margin: 2vh 2vw;
+  padding: 0 3vw; }
+
+.error-container i {
+  font-size: 4rem; }
+
+/*
+ * Grid: Header
+ */
+.new-tweet h2 {
+  grid-area: header;
+  justify-self: center; }
+
+/*
+ * Grid: Form Section
+ */
+.new-tweet form {
+  grid-area: form;
+  display: grid;
+  grid-template-areas: "textArea textArea textArea" "tweetButton . counter";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto; }
+
+/*
+ * Grid: Form Section -> textArea Section
+ */
+.new-tweet textarea {
+  grid-area: textArea;
+  background-color: #f4f1ec;
+  /* Removes decoration to textArea */
+  resize: none;
+  outline: none;
+  color: #545149;
+  border: 0;
+  border-bottom: 4px solid;
+  border-color: #545149;
+  margin-bottom: 0.7vh; }
+
+/*
+ * Grid: Form Section -> tweetButton Section
+ */
+.new-tweet input {
+  grid-area: tweetButton;
+  justify-self: start;
+  font-family: 'Bungee', sans-serif;
+  /* Logo */
+  font-size: 1.2rem;
+  color: white;
+  margin: 0.3vh 1vw;
+  padding: 0.5vh 0.5vw;
+  background-color: #4056A1; }
+
+.new-tweet input:hover,
+.new-tweet input:focus,
+.new-tweet input:active {
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 3px #CCCCCC; }
+
+/*
+ * Grid: Form Section -> counter Section
+ */
+.new-tweet .counter {
+  grid-area: counter;
+  justify-self: end;
+  font-family: 'Bungee', sans-serif;
+  /* Logo */
+  margin: 0.3vh 1vw; }
+
+.backToTop {
+  position: fixed;
+  color: white;
+  background-color: red;
+  position: fixed;
+  bottom: 4vh;
+  right: 4vw;
+  font-size: 3rem;
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 40px; }
+
+.backToTop:hover,
+.backToTop:focus,
+.backToTop:active {
+  color: #CF9A3E;
+  box-shadow: 1px 1px 2px 3px #CCCCCC; }

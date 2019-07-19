@@ -13,7 +13,7 @@
   padding: 1.5em;
 
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: $color-banner-blue;
  }
 
  nav ul {
@@ -48,7 +48,7 @@
  #writeTweet i {
   align-self: center;
   margin: 0.3vh;
-  color: #DE5039;
+  color: $color-soft-red;
   padding: 1vh 1vw;
   border : solid 4px rgba(255, 255, 255, 0.0);
   border-radius: 40px;
@@ -57,7 +57,7 @@
  #writeTweet i:hover,
  #writeTweet i:focus,
  #writeTweet i:active {
-  color: red;
+  color: $color-vibrant-red;
   border : solid 4px rgba(255, 255, 255, 0.3);
   border-radius: 40px;
   cursor: pointer;
