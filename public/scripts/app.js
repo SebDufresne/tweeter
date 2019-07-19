@@ -175,7 +175,7 @@ const hideError = () => {
 * If it's invalid, display an error message
 */
 const validateTweet = (tweetText) => {
-  if (!tweetText) {
+  if (!tweetText || tweetText === '\n') {
     showError("Can't be empty");
     return false;
   } else if (tweetText.length > MAX_CHARS) {
@@ -215,7 +215,6 @@ $(document).ready(function() {
     const $form = $(this);
 
     const $inputText = $form.find('textarea[name="text"]');
-    const $counterValue = $form.find('span');
     const $textToValidate = $inputText.val();
 
     if (validateTweet($textToValidate)) {
