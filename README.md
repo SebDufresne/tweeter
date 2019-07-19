@@ -8,31 +8,31 @@ Tweeter is a simple, single-page Twitter clone.
 
 When hovering over a Tweet, put emphasis on it.
 
-!["Screen capture of highlighting in desktop mode"](https://github.com/SebDufresne/tinyapp/blob/master/docs/desktop_highlight_menu.png)
+!["Screen capture of highlighting in desktop mode"](https://github.com/SebDufresne/tweeter/blob/master/docs/desktop_highlight_menu.png)
 
 ### Tablet Mode - Layout
 
 The page will adapt itself depending on the viewport width.
 
-!["Screen capture of layout in tablet mode"](https://github.com/SebDufresne/tinyapp/blob/master/docs/tablet_layout.png)
+!["Screen capture of layout in tablet mode"](https://github.com/SebDufresne/tweeter/blob/master/docs/tablet_layout.png)
 
 ### Tablet Mode - New Tweet
 
 Upon clicking on the top right arrow will give the opportunity to write a new Tweet.
 
-!["Screen capture of a new tweet in tablet mode"](https://github.com/SebDufresne/tinyapp/blob/master/docs/tablet_newTweet.png)
+!["Screen capture of a new tweet in tablet mode"](https://github.com/SebDufresne/tweeter/blob/master/docs/tablet_newTweet.png)
 
 ### Tablet Mode - Error Message
 
 In case of too many characters, or an empty tweet, an error message will be displayed.
 
-!["Screen capture of too many characters error in tablet mode"](https://github.com/SebDufresne/tinyapp/blob/master/docs/tablet_errorMessage.png)
+!["Screen capture of too many characters error in tablet mode"](https://github.com/SebDufresne/tweeter/blob/master/docs/tablet_errorMessage.png)
 
 ### Mobile Mode - Back To Top Button
 
 When the user starts scrolling, the top right arrows will disappear and will be replaced by a "bring me back to top" button located on the bottom right, this feature is present in all modes.
 
-!["Screen capture of Back To Top Button in mobile mode"](https://github.com/SebDufresne/tinyapp/blob/master/docs/mobile_backToTop_Button.png)
+!["Screen capture of Back To Top Button in mobile mode"](https://github.com/SebDufresne/tweeter/blob/master/docs/mobile_backToTop_Button.png)
 
 ## Dependencies
 
