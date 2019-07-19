@@ -12,7 +12,8 @@ html {
   box-sizing: inherit; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-size: 16px; }
 
 body {
   color: #545149;
@@ -115,53 +116,36 @@ article.tweet {
   border: 4px solid;
   margin: 2vh 3vw;
   padding: 1vh 2vw; }
-
-/*
- * Header
- */
-article.tweet > header {
-  display: flex;
-  flex-flow: row;
-  align-items: center; }
-
-article.tweet img {
-  max-width: 64px;
-  max-height: 64px; }
-
-article.tweet > header h3 {
-  padding-left: 0.5vw; }
-
-article.tweet > header p {
-  margin-left: auto;
-  color: #888888;
-  opacity: 0; }
-
-/*
- * Main Text
- */
-article.tweet > p {
-  border: 0;
-  border-bottom: 4px solid;
-  border-color: #545149;
-  margin-bottom: 0;
-  padding-bottom: 1em; }
-
-/*
- * Footer
- */
-article.tweet > footer {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  margin: 1vh 1vw;
-  padding: 0 1vw; }
-
-article.tweet > footer p {
-  margin: 0; }
-
-article.tweet > footer i {
-  color: #4056A1;
-  margin: 0.2vh 0.2vw; }
+  article.tweet > header {
+    display: flex;
+    flex-flow: row;
+    align-items: center; }
+    article.tweet > header img {
+      max-width: 64px;
+      max-height: 64px; }
+    article.tweet > header h3 {
+      padding-left: 0.5vw; }
+    article.tweet > header p {
+      margin-left: auto;
+      color: #888888;
+      opacity: 0; }
+  article.tweet > p {
+    border: 0;
+    border-bottom: 4px solid;
+    border-color: #545149;
+    margin-bottom: 0;
+    padding-bottom: 1em; }
+  article.tweet > footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 1vh 1vw;
+    padding: 0 1vw; }
+    article.tweet > footer p {
+      margin: 0; }
+    article.tweet > footer i {
+      color: #4056A1;
+      margin: 0.2vh 0.2vw; }
 
 /*
  * :hover
@@ -169,7 +153,7 @@ article.tweet > footer i {
 article.tweet:hover,
 article.tweet:focus,
 article.tweet:active {
-  box-shadow: 3px 3px 5px 6px #CCCCCC; }
+  box-shadow: 0.188em 0.188em 0.313em 0.375em #CCCCCC; }
 
 article.tweet:hover > header p,
 article.tweet:focus > header p,
@@ -184,72 +168,49 @@ article.tweet:active > header p {
   grid-template-areas: "error" "header" "form";
   grid-template-columns: auto;
   grid-template-rows: auto;
-  margin: 2vh 3vw; }
-
-.overfill {
-  color: red; }
-
-.new-tweet div.error-container {
-  grid-area: error;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: red;
-  font-size: 1.2rem;
-  border: 4px solid;
-  border-color: red;
-  border-radius: 25px;
-  margin: 2vh 2vw;
-  padding: 0 3vw; }
-
-.error-container i {
-  font-size: 4rem; }
-
-/*
- * Grid: Header
- */
-.new-tweet h2 {
-  grid-area: header;
-  justify-self: center; }
-
-/*
- * Grid: Form Section
- */
-.new-tweet form {
-  grid-area: form;
-  display: grid;
-  grid-template-areas: "textArea textArea textArea" "tweetButton . counter";
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto; }
-
-/*
- * Grid: Form Section -> textArea Section
- */
-.new-tweet textarea {
-  grid-area: textArea;
-  background-color: #f4f1ec;
-  /* Removes decoration to textArea */
-  resize: none;
-  outline: none;
-  color: #545149;
-  border: 0;
-  border-bottom: 4px solid;
-  border-color: #545149;
-  margin-bottom: 0.7vh; }
-
-/*
- * Grid: Form Section -> tweetButton Section
- */
-.new-tweet input {
-  grid-area: tweetButton;
-  justify-self: start;
-  font-family: 'Bungee', sans-serif;
-  /* Logo */
-  font-size: 1.2rem;
-  color: white;
-  margin: 0.3vh 1vw;
-  padding: 0.5vh 0.5vw;
-  background-color: #4056A1; }
+  margin: 2vh 3vw;
+  /*
+  * Grid: Header
+  */
+  /*
+  * Grid: Form Section
+  */
+  /*
+  * Grid: Form Section -> textArea Section
+  */
+  /*
+  * Grid: Form Section -> tweetButton Section
+  */ }
+  .new-tweet h2 {
+    grid-area: header;
+    justify-self: center; }
+  .new-tweet form {
+    grid-area: form;
+    display: grid;
+    grid-template-areas: "textArea textArea textArea" "tweetButton . counter";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto; }
+  .new-tweet textarea {
+    grid-area: textArea;
+    background-color: #f4f1ec;
+    /* Removes decoration to textArea */
+    resize: none;
+    outline: none;
+    color: #545149;
+    border: 0;
+    border-bottom: 4px solid;
+    border-color: #545149;
+    margin-bottom: 0.7vh; }
+  .new-tweet input {
+    grid-area: tweetButton;
+    justify-self: start;
+    font-family: "Bungee", sans-serif;
+    /* Logo */
+    font-size: 1.2rem;
+    color: white;
+    margin: 0.3vh 1vw;
+    padding: 0.5vh 0.5vw;
+    background-color: #4056A1; }
 
 .new-tweet input:hover,
 .new-tweet input:focus,
@@ -286,3 +247,24 @@ article.tweet:active > header p {
 .backToTop:active {
   color: #CF9A3E;
   box-shadow: 1px 1px 2px 3px #CCCCCC; }
+
+.overfill {
+  color: red; }
+
+/*
+* Used in the tweet-new section
+*/
+div.error-container {
+  grid-area: error;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  font-size: 1.2rem;
+  border: 4px solid;
+  border-color: red;
+  border-radius: 25px;
+  margin: 2vh 2vw;
+  padding: 0 3vw; }
+  div.error-container i {
+    font-size: 4rem; }

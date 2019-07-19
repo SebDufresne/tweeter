@@ -1,0 +1,29 @@
+.overfill {
+  color:$color-vibrant-red;
+}
+
+/*
+* Used in the tweet-new section
+*/
+
+div.error-container {
+  grid-area: error;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $color-vibrant-red;
+  font-size: 1.2rem;
+
+  border: 4px solid;
+  border-color: $color-vibrant-red;
+  border-radius: 25px;
+
+  margin: 2vh 2vw;
+  padding: 0 3vw;
+
+  i {
+    font-size: 4rem;
+  }
+}
+

@@ -7,66 +7,54 @@
   border: 4px solid;
   margin: 2vh 3vw;
   padding: 1vh 2vw;
-}
 
-/*
- * Header
- */
+  > header {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
 
- article.tweet > header {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-}
+    img {
+      max-width: 64px;
+      max-height: 64px;
+    }
 
-article.tweet img {
-  max-width: 64px;
-  max-height: 64px;
-}
+    h3 {
+      padding-left: 0.5vw;
+    }
 
- article.tweet > header h3 {
-  padding-left: 0.5vw;
-}
+    p {
+      margin-left: auto;
+      color: #888888;
+      opacity: 0;
+    }
+  }
 
-article.tweet > header p {
-  margin-left: auto;
-  color: #888888;
-  opacity: 0;
-}
+  > p {
+    border: 0;
+    border-bottom: 4px solid;
+    border-color: $color-soft-brown;
+  
+    margin-bottom: 0;
+  
+    padding-bottom: 1em;
+  }
 
-/*
- * Main Text
- */
+  > footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 1vh 1vw;
+    padding: 0 1vw;
 
- article.tweet > p {
-  border: 0;
-  border-bottom: 4px solid;
-  border-color: $color-soft-brown;
+    p {
+      margin: 0;
+    }
 
-  margin-bottom: 0;
-
-  padding-bottom: 1em;
-}
-
-/*
- * Footer
- */
-
- article.tweet > footer {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  margin: 1vh 1vw;
-  padding: 0 1vw;
-}
-
-article.tweet > footer p {
-  margin: 0;
-}
-
-article.tweet > footer i {
-  color: $color-banner-blue;
-  margin: 0.2vh 0.2vw;
+    i {
+      color: $color-banner-blue;
+      margin: 0.2vh 0.2vw;
+    }
+  }
 }
 
 /*
@@ -76,7 +64,7 @@ article.tweet > footer i {
 article.tweet:hover,
 article.tweet:focus,
 article.tweet:active {
-  box-shadow: 3px 3px 5px 6px #CCCCCC;
+  box-shadow: $shadow;
 }
 
 article.tweet:hover > header p,

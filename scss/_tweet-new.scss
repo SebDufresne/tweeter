@@ -2,7 +2,7 @@
  * New Tweet Styling
  */
 
- .new-tweet {
+.new-tweet {
   display: grid;
   grid-template-areas:
     "error"
@@ -11,93 +11,65 @@
   grid-template-columns: auto;  
   grid-template-rows: auto;
   margin: 2vh 3vw;
-}
 
-.overfill {
-  color:$color-vibrant-red;
-}
+  /*
+  * Grid: Header
+  */
 
-.new-tweet div.error-container {
-  grid-area: error;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  h2 {
+    grid-area: header;
+    justify-self: center;
+  }
 
-  color: $color-vibrant-red;
-  font-size: 1.2rem;
+  /*
+  * Grid: Form Section
+  */
+  form {
+    grid-area: form;
+    display: grid;
+    grid-template-areas:
+      "textArea textArea textArea"
+      "tweetButton . counter";
+    grid-template-columns: auto auto auto;  
+    grid-template-rows: auto auto;
+  }
 
-  border: 4px solid;
-  border-color: $color-vibrant-red;
-  border-radius: 25px;
+  /*
+  * Grid: Form Section -> textArea Section
+  */
+  textarea {
+    grid-area: textArea;
+    background-color: $color-main-background;
 
-  margin: 2vh 2vw;
-  padding: 0 3vw;
-}
+    /* Removes decoration to textArea */
+    resize:none;
+    outline: none;
 
-.error-container i {
-  font-size: 4rem;
-}
+    color: $color-soft-brown;
 
-/*
- * Grid: Header
- */
+    border: 0;
+    border-bottom: 4px solid;
+    border-color: $color-soft-brown;
 
-.new-tweet h2 {
-  grid-area: header;
-  justify-self: center;
-}
+    margin-bottom: 0.7vh;    
+  }
 
-/*
- * Grid: Form Section
- */
-
-.new-tweet form {
-  grid-area: form;
-  display: grid;
-  grid-template-areas:
-    "textArea textArea textArea"
-    "tweetButton . counter";
-  grid-template-columns: auto auto auto;  
-  grid-template-rows: auto auto;
-}
-
-/*
- * Grid: Form Section -> textArea Section
- */
-
-.new-tweet textarea {
-  grid-area: textArea;
-  background-color: #f4f1ec;
-
-  /* Removes decoration to textArea */
-  resize:none;
-  outline: none;
-
-  color: $color-soft-brown;
-
-  border: 0;
-  border-bottom: 4px solid;
-  border-color: $color-soft-brown;
-
-  margin-bottom: 0.7vh;
-}
-
-/*
- * Grid: Form Section -> tweetButton Section
- */
-
-.new-tweet input {
-  grid-area: tweetButton;
-  justify-self: start;
-
-  font-family: 'Bungee', sans-serif; /* Logo */
-  font-size: 1.2rem;
-  color:white;
+  /*
+  * Grid: Form Section -> tweetButton Section
+  */
+  input {
+    grid-area: tweetButton;
+    justify-self: start;
   
-  margin: 0.3vh 1vw;
-  padding: 0.5vh 0.5vw;
-
-  background-color: $color-banner-blue;
+    font-family: $font-logo; /* Logo */
+    font-size: 1.2rem;
+    color:white;
+    
+    margin: 0.3vh 1vw;
+    padding: 0.5vh 0.5vw;
+  
+    background-color: $color-banner-blue;
+  }
 }
 
 .new-tweet input:hover,
