@@ -135,20 +135,19 @@ const loadLatestTweet = () => {
 loadTweets();
 
 const showError = (error) => {
-  $('.error-container').slideUp(400, () => {
+  $('.hidden-error').slideUp(400, () => {
     const $errorMsg = $('.error-container h1');
     $errorMsg.text(error);
-    $('.error-container').slideDown();
+    $('.hidden-error').slideDown();
   });
 };
 
 const hideError = () => {
-  $('.error-container').slideUp();
+  $('.hidden-error').slideUp();
 };
 
 /* Post new tweet */
 $(document).ready(function() {
-  $('.error-container').hide();  /* Starts error as hidden */
   $('form').submit(function(event) {
     const $form = $(this);
 
@@ -156,9 +155,9 @@ $(document).ready(function() {
     const $counterValue = $form.find('span');
 
     if (!$inputText.val()) {
-      showError("Tweet can't be empty");
+      showError("Can't be empty");
     } else if ($inputText.val().length > 140) {
-      showError("Tweet can't be more than 140 characters");
+      showError("No more than 140 characters");
     } else {
       $.post($form.attr('action'), $form.serialize())
         .then(() => {

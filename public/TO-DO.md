@@ -1,13 +1,11 @@
-Change tools icons Colors
-
-Seperate the .js
--> displayTools
--> manageTweets
+Change tools icons Colors on hover
 
 Implement "enter" for the text field
-
-Remove error message placeholder
 
 Make dates "clean"
 
 implement Sass
+
+dispaly how long ago the tweet was created
+
+implement body for new tweet (and old ones)

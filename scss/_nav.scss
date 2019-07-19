@@ -2,7 +2,7 @@
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- nav {
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,22 +14,22 @@
 
   color: #FFFFFF;
   background-color: $color-banner-blue;
- }
 
- nav ul {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  
-  list-style-type: none;
- }
+  ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    
+    list-style-type: none;
+  }
+}
 
 /*
  * Logo section
  */
 
  #logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: $font-logo;
  }
 
 /*
@@ -40,34 +40,34 @@
   font-size: 1.25rem;
  }
 
- li#writeTweet {
+li#writeTweet {
   display: flex;
   flex-flow: column;
- }
 
- #writeTweet i {
-  align-self: center;
-  margin: 0.3vh;
-  color: $color-soft-red;
-  padding: 1vh 1vw;
-  border : solid 4px rgba(255, 255, 255, 0.0);
-  border-radius: 40px;
- }
+  i {
+    align-self: center;
+    margin: 0.3vh;
+    color: $color-soft-red;
+    padding: 1vh 1vw;
+    border : solid 4px rgba(255, 255, 255, 0.0);
+    border-radius: 40px;
+   }
+}
 
- #writeTweet i:hover,
- #writeTweet i:focus,
- #writeTweet i:active {
+#writeTweet i:hover,
+#writeTweet i:focus,
+#writeTweet i:active {
   color: $color-vibrant-red;
   border : solid 4px rgba(255, 255, 255, 0.3);
   border-radius: 40px;
   cursor: pointer;
- }
+}
 
  /*
  * Red Arrow Animation
  */
 
- .moveUpDown {
+.moveUpDown {
   animation: mover 1s infinite alternate;
 }
 

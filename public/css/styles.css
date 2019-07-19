@@ -55,18 +55,17 @@ nav {
   padding: 1.5em;
   color: #FFFFFF;
   background-color: #4056A1; }
-
-nav ul {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  list-style-type: none; }
+  nav ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    list-style-type: none; }
 
 /*
  * Logo section
  */
 #logo {
-  font-family: 'Bungee', sans-serif; }
+  font-family: "Bungee", sans-serif; }
 
 /*
  * Write a new tweet section
@@ -77,14 +76,13 @@ nav ul {
 li#writeTweet {
   display: flex;
   flex-flow: column; }
-
-#writeTweet i {
-  align-self: center;
-  margin: 0.3vh;
-  color: #DE5039;
-  padding: 1vh 1vw;
-  border: solid 4px rgba(255, 255, 255, 0);
-  border-radius: 40px; }
+  li#writeTweet i {
+    align-self: center;
+    margin: 0.3vh;
+    color: #DE5039;
+    padding: 1vh 1vw;
+    border: solid 4px rgba(255, 255, 255, 0);
+    border-radius: 40px; }
 
 #writeTweet i:hover,
 #writeTweet i:focus,
@@ -117,7 +115,6 @@ article.tweet {
   margin: 2vh 3vw;
   padding: 1vh 2vw; }
   article.tweet > header {
-    display: flex;
     flex-flow: row;
     align-items: center; }
     article.tweet > header img {
@@ -168,7 +165,10 @@ article.tweet:active > header p {
   grid-template-areas: "error" "header" "form";
   grid-template-columns: auto;
   grid-template-rows: auto;
-  margin: 2vh 3vw;
+  margin: 2.3rem;
+  /*
+  * Possible Error
+  */
   /*
   * Grid: Header
   */
@@ -181,6 +181,29 @@ article.tweet:active > header p {
   /*
   * Grid: Form Section -> tweetButton Section
   */ }
+  .new-tweet .overfill {
+    color: red; }
+  .new-tweet .hidden-error {
+    display: none; }
+  .new-tweet .error-container {
+    grid-area: error;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: red;
+    font-size: 2vmin;
+    border: 4px solid;
+    border-color: red;
+    border-radius: 25px;
+    margin: 1vmin; }
+    .new-tweet .error-container i {
+      padding: 0;
+      font-size: 4vmin; }
+      .new-tweet .error-container i:last-child {
+        padding-right: 2.5vmin; }
+    .new-tweet .error-container h1 {
+      margin: 0;
+      font-size: 4vmin; }
   .new-tweet h2 {
     grid-area: header;
     justify-self: center; }
@@ -247,24 +270,3 @@ article.tweet:active > header p {
 .backToTop:active {
   color: #CF9A3E;
   box-shadow: 1px 1px 2px 3px #CCCCCC; }
-
-.overfill {
-  color: red; }
-
-/*
-* Used in the tweet-new section
-*/
-div.error-container {
-  grid-area: error;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: red;
-  font-size: 1.2rem;
-  border: 4px solid;
-  border-color: red;
-  border-radius: 25px;
-  margin: 2vh 2vw;
-  padding: 0 3vw; }
-  div.error-container i {
-    font-size: 4rem; }
