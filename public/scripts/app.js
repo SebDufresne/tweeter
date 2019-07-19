@@ -169,6 +169,36 @@ const hideError = () => {
   $('.hidden.error').slideUp();
 };
 
+/*
+* Validate that the tweet isn't empty
+* And that it's not more than the max number of chars
+* If it's invalid, display an error message
+*/
+const validateTweet = (tweetText) => {
+  if (!tweetText) {
+    showError("Can't be empty");
+    return false;
+  } else if (tweetText.length > MAX_CHARS) {
+    showError(`No more than ${MAX_CHARS} characters`);
+    return false;
+  }
+  return true;
+};
+
+/*
+* For a given form
+* Hide any errors
+* Empty the textArea
+* Reinitialize the counter value to MAX_CHARS
+*/
+const reinitializeForm = ($form) => {
+  const $inputText = $form.find('textarea[name="text"]');
+  const $counterValue = $form.find('span');
+
+  hideError();
+  $inputText.val('');
+  $counterValue.text(`${MAX_CHARS}`);
+};
 
 /*
 * Section With Event Listeners (active once document is ready)
@@ -176,25 +206,23 @@ const hideError = () => {
 $(document).ready(function() {
 
   /*
-  * Post new tweet
+  * Listen to submit button
+  * If tweet pass validation, submit it
+  * reinitialize the form
+  * And load the tweet in the view
   */
   $('form').submit(function(event) {
     const $form = $(this);
 
     const $inputText = $form.find('textarea[name="text"]');
     const $counterValue = $form.find('span');
+    const $textToValidate = $inputText.val();
 
-    if (!$inputText.val()) {
-      showError("Can't be empty");
-    } else if ($inputText.val().length > MAX_CHARS) {
-      showError(`No more than ${MAX_CHARS} characters`);
-    } else {
+    if (validateTweet($textToValidate)) {
       $.post($form.attr('action'), $form.serialize())
         .then(() => {
-          hideError();
+          reinitializeForm($form);
           loadLatestTweet();
-          $inputText.val('');
-          $counterValue.text(`${MAX_CHARS}`);
         })
         .fail(error => console.error(error));
     }
@@ -203,18 +231,22 @@ $(document).ready(function() {
   });
 
   /*
+  * Listen to click on 'Write a new Tweet'
   * Hide and show New Tweet Section
   */
-  $('#writeTweet i').click(function () {
+  $('#writeTweet i').click(function() {
+
+    /* If the section is hidden, show it and move cursor in textArea */
     if ($('.new-tweet').is(':hidden')) {
       $('.new-tweet').slideDown('slow');
       const $textArea = $("textarea[name='text']");
       $textArea.focus();
+
+    /* If the section is shown, hide it */
     } else {
       $('.new-tweet').slideUp('slow');
     }
   });
-
 
   /*
   * Listen to Scroll Event on Document
@@ -222,16 +254,22 @@ $(document).ready(function() {
   */
   $(document).scroll(function() {
 
+    /* If we're not at the top of the browser */
     if ($(window).scrollTop() !== 0) {
       $($button_writeTweet).hide();
       $($button_backToTop).show();
+
+    /* If we're at the top of the browser */
     } else {
       $($button_writeTweet).show();
       $($button_backToTop).hide();
     }
   });
 
-
+  /*
+  * Listen to Click on backToTop Button
+  * Scrolls back to the top of the page
+  */
   $($button_backToTop).click(function() {
     window.scrollTo(0, 0);
   });
