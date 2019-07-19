@@ -34,7 +34,6 @@ Minimalists view optimal for a mobile display.
 
 !["screen capture of login menu"](https://github.com/SebDufresne/tinyapp/blob/master/docs/login.png)
 
-
 ## Dependencies
 
 - Express
