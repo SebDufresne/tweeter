@@ -22,9 +22,9 @@ $(document).ready(function() {
   });
 
   /*
-  * Test to see if character is 'ENTER'
+  * Listen to see if character is 'ENTER'
   * If so, submit form
-  * BROKEN: Won't pass through the validation process, can submit empty tweet
+  * BROKEN: Won't pass through the validation process can submit empty tweet
   * KEEP DISABLED UNTIL FUTURE FIX
   */
   // $("textarea").keyup(function(key) {
